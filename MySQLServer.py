@@ -20,10 +20,10 @@ def create_database():
             connection.commit()
             print("Database 'alx_book_store' created successfully.")
     
-    except Error as e:
+    except mysql.connector.Error as e:
         print(f"Error while connecting to MySQL: {e}")
 
-    except Exception as e:
+    except mysql.connector.Exception as e:
         print(f"An unexpected error occurred: {e}")
     
     finally:
