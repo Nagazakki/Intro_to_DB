@@ -6,23 +6,23 @@ def create_database():
     cursor = None
 
     try:
-        connection = mysql.connector,connect(
+        connection = mysql.connector.connect(
             host = 'localhost'
             user = 'root'
             password = '@Holaputa5'
         )
-
+            
         if connection.is_connected():
             cursor = connection.cursor()
 
-            create_db_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
-            cursor.execute(create_db_query)
+            cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
 
             connection.commit()
             print("Database 'alx_book_store' created successfully.")
     
     except Error as e:
         print(f"Error while connecting to MySQL: {e}")
+
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
     
